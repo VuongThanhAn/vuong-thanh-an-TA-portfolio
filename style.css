@@ -960,3 +960,74 @@ main {
     gap: 10px;
   }
 }
+
+
+/* =========================================================
+   PROJECT SEPARATORS
+========================================================= */
+
+/* No numeric project labels — projects are separated by a
+   subtle long rule instead. */
+.project-number,
+.section-number {
+  display: none;
+}
+
+/* Long, brighter separator between project elements. */
+.artwork-project.project-item + .artwork-project.project-item,
+.game-card.project-item + .game-card.project-item {
+  position: relative;
+  padding-top: 100px;
+}
+
+.artwork-project.project-item + .artwork-project.project-item::before,
+.game-card.project-item + .game-card.project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #3a3a3a;
+}
+
+/* Keep the compact Honorable Projects grid clean. */
+.honorable-card.project-item + .honorable-card.project-item {
+  padding-top: 0;
+}
+
+.honorable-card.project-item + .honorable-card.project-item::before {
+  display: none;
+}
+
+
+/* =========================================================
+   SECTION HEADERS WITHOUT NUMBERS
+========================================================= */
+
+.section-header {
+  gap: 0;
+}
+
+.honorable-header {
+  gap: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE PROJECT SEPARATORS
+========================================================= */
+
+@media (max-width: 900px) {
+  .artwork-project.project-item + .artwork-project.project-item,
+  .game-card.project-item + .game-card.project-item {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .artwork-project.project-item + .artwork-project.project-item,
+  .game-card.project-item + .game-card.project-item {
+    padding-top: 55px;
+  }
+}
