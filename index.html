@@ -785,12 +785,14 @@
         );
         nextButton.addEventListener("click", () => showMedia(currentIndex + 1));
 
+        // Thumbnail arrows select the previous / next thumbnail.
+        // This works even when all thumbnails fit in the row.
         thumbnailPrev.addEventListener("click", () => {
-          thumbnailStrip.scrollBy({ left: -280, behavior: "smooth" });
+          showMedia(currentIndex - 1);
         });
 
         thumbnailNext.addEventListener("click", () => {
-          thumbnailStrip.scrollBy({ left: 280, behavior: "smooth" });
+          showMedia(currentIndex + 1);
         });
 
         showMedia(0);
